@@ -1,0 +1,113 @@
+// super trunfo mestre
+
+#include <stdio.h>
+#include <windows.h>
+#include <unistd.h>
+
+int main(){
+
+    char estado2[2];
+    char estado1;
+    char cod1[3], cod2[3], nome1[15], nome2[15];
+    unsigned long int pop1, pop2;
+    int numpontosturisticos1, numpontosturisticos2;
+    float area1, area2, pib1, pib2;
+    float dens1, dens2, pibcap1, pibcap2;
+    float suppower1, suppower2;
+
+// inserir dados
+
+    printf("Digite o nome do estado ( uma letra de A a H ): ");
+    scanf("%c",&estado1);
+    printf("Digite o codigo da carta (letra do estado + numero de 01 a 04): ");
+    scanf("%s",&cod1);
+    printf("Digite o nome da cidade: ");
+    scanf("%s",&nome1);
+    printf("Digite o numero de habitantes: ");
+    scanf("%lu",&pop1);
+    printf("Digite a area em KM2: ");
+    scanf("%f",&area1);
+    printf("Digite o PIB: ");
+    scanf("%f",&pib1);
+    printf("Digite o numero de pontos turisticos: ");
+    scanf("%d",&numpontosturisticos1);
+    dens1= pop1/area1;
+    pibcap1= pib1/pop1;
+    suppower1= pop1+(float)area1+(float)pib1+numpontosturisticos1+(float)pibcap1+(float)1/dens1;
+
+
+    printf("\n\nCARTA 02 \n");
+    printf("Digite o nome do estado ( uma letra de A a H ): ");
+    scanf("%s", &estado2);
+    printf("Digite o codigo da carta (letra do estado + numero de 01 a 04): ");
+    scanf("%s", &cod2);
+    printf("Digite o nome da cidade: ");
+    scanf("%s", &nome2);
+    printf("Digite o numero de habitantes: ");
+    scanf("%lu", &pop2);
+    printf("Digite a area em KM2: ");
+    scanf("%f", &area2);
+    printf("Digite o PIB: ");
+    scanf("%f", &pib2);
+    printf("Digite o numero de pontos turisticos: ");
+    scanf("%d", &numpontosturisticos2);
+    dens2= pop2/area2;
+    pibcap2= pib2/pop2;
+    suppower2= pop2+(float)area2+(float)pib2+numpontosturisticos2+(float)pibcap2+(float)1/dens2;
+
+
+    system("cls");//limpa tela
+
+// exibir resultados
+
+    printf(" CARTA 01 \n - ESTADO: %c \n - CODIGO: %s \n - NOME DA CIDADE: %s \n - POPULACAO: %lu \n - AREA: %.2f KM2 \n - PIB R$ %.2f bilhoes de Reais \n - NUMEROS DE PONTOS TURISTICOS: %d \n - Densidade Populacional: %.2f hab/km2 \n - PIB per Capita: %.2f reais \n - SUPERPOWER: %.2f \n\n",estado1,cod1,nome1,pop1,area1,pib1,numpontosturisticos1,dens1,pibcap1,suppower1 );
+
+    printf("\n\nCARTA 02 \n - ESTADO: %s \n - CODIGO: %s \n - NOME DA CIDADE: %s \n - POPULACAO: %lu \n - AREA: %.2f KM2 \n - PIB R$ %.2f bilhoes de Reais \n - NUMEROS DE PONTOS TURISTICOS: %d \n - Densidade Populacional: %.2f hab/km2 \n - PIB per Capita: %.2f reais \n - SUPERPOWER: %.2f \n\n",estado2,cod2,nome2,pop2,area2,pib2,numpontosturisticos2,dens2,pibcap2,suppower2);
+
+
+    sleep(5);// espera 5 segundos para exibir tela comparacao
+    system("cls");// limpa tela
+
+// exibir tela de comparacao das cartas
+
+    printf("\n\n  COMPARACAO DAS CARTAS:  \n\n");
+
+    if (pop1>pop2){
+            printf("- POPULACAO: CARTA 01 VENCEU (%d)\n",pop1>pop2); }
+    else {
+            printf("- POPULACAO: CARTA 02 VENCEU (%d)\n",pop1>pop2);}
+
+    if (area1>area2){
+            printf("- AREA: CARTA 01 VENCEU (%d)\n",area1>area2); }
+    else {
+            printf("- AREA: CARTA 02 VENCEU (%d)\n",area1>area2);}
+
+
+    if (pib1>pib2){
+            printf("- PIB: CARTA 01 VENCEU (%d)\n",pib1>pib2); }
+    else {
+            printf("- PIB: CARTA 02 VENCEU (%d)\n",pib1>pib2);}
+
+    if (numpontosturisticos1>numpontosturisticos2){
+            printf("- PONTOS TURISTICOS: CARTA 01 VENCEU (%d)\n",numpontosturisticos1>numpontosturisticos2); }
+    else {
+            printf("- PONTOS TURISTICOS: CARTA 02 VENCEU (%d)\n",numpontosturisticos1>numpontosturisticos2);}
+
+    if (dens1<dens2){
+            printf("- DENSIDADE POPULACIONAL: CARTA 01 VENCEU (%d)\n",dens1<dens2); }
+    else {
+            printf("- DENSIDADE POPULACIONAL: CARTA 02 VENCEU (%d)\n",dens1<dens2);}
+
+    if (pibcap1>pibcap2){
+            printf("- PIB PER CAPITA: CARTA 01 VENCEU (%d)\n",pibcap1>pibcap2); }
+    else {
+            printf("- PIB PER CAPITA: CARTA 02 VENCEU (%d)\n",pibcap1>pibcap2);}
+
+    if (suppower1>suppower2){
+            printf("- SUPER PODER: CARTA 01 VENCEU (%d)\n",suppower1>suppower2); }
+    else {
+            printf("- SUPER PODER: CARTA 02 VENCEU (%d)\n",suppower1>suppower2);}
+
+    return 0;
+
+}
